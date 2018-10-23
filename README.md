@@ -1,5 +1,4 @@
-# demo
-
+# demo spring application 
 
 **1 clone the project** 
 
