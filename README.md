@@ -2,11 +2,11 @@
 
 **1 clone the project** 
 
-`git clone git@gitlab.com:focus_it/payroll.git`
+`https://github.com/ahmeed83/demo.git`
 
 **2. Run the app** 
 
-`run class "PayrollApplication"` 
+`run class "DemoApplication"` 
 
 **3. check database H2**
 
