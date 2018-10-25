@@ -18,13 +18,8 @@ public class CustomerService {
     }
 
     public Customer createCustomer(final Customer inputCustomer) {
-        Customer customer = new Customer();
-        customer.setName(inputCustomer.getName());
-        customer.setEmail(inputCustomer.getEmail());
-        customer.setNumber(inputCustomer.getNumber());
-        customer.setAddress(inputCustomer.getAddress());
-        customerRepository.save(customer);
-        return customer;
+        customerRepository.save(inputCustomer);
+        return inputCustomer;
     }
 
     public Optional<Customer> getCustomer(final Long customerId) {
