@@ -1,4 +1,4 @@
-# demo spring application 
+# WTH springboot demo application 
 
 **1 clone the project** 
 
