@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
@@ -8,11 +9,15 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "customer_id")
     private Long id;
     private String name;
     private String email;
     private String number;
     private String address;
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Account> accounts;
 
     public Long getId() {
         return id;
@@ -52,5 +57,13 @@ public class Customer {
 
     public void setAddress(final String address) {
         this.address = address;
+    }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
     }
 }

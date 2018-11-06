@@ -12,3 +12,6 @@ insert into customer
 values(10006, 'Oleg', 'oleg@email.com', '061234567890', 'Amsterdam');
 insert into customer
 values(10007, 'Pragya', 'pragya@email.com', '061234567890', 'Amsterdam');
+
+insert into account
+values (10001, 0, 'INGB0000000001', 1, now(), null, 10001);

@@ -3,6 +3,7 @@ package com.example.demo.resource;
 import com.example.demo.model.Customer;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -10,6 +11,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/customer")
 public class CustomerResource {
+
+    @Value("${spring.jpa.database-platform}")
+    private String value;
 
     private final CustomerService customerService;
 
@@ -41,5 +45,10 @@ public class CustomerResource {
     @PutMapping()
     public Optional<Customer> editCustomer(final @RequestBody Customer customer) {
         return customerService.updateCustomer(customer);
+    }
+
+    @GetMapping("/value")
+    public String getValue() {
+        return value;
     }
 }
