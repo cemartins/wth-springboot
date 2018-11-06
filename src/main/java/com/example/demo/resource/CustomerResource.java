@@ -3,6 +3,7 @@ package com.example.demo.resource;
 import com.example.demo.model.Customer;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -11,11 +12,19 @@ import java.util.Optional;
 @RequestMapping("/customer")
 public class CustomerResource {
 
+    @Value("${file.directory}")
+    private String value;
+
     private final CustomerService customerService;
 
     @Autowired
     public CustomerResource(final CustomerService customerService) {
         this.customerService = customerService;
+    }
+
+    @GetMapping("/value")
+    public String getValueFromProperty(){
+        return value;
     }
 
     @GetMapping()
