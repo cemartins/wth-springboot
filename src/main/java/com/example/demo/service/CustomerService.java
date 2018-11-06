@@ -35,7 +35,7 @@ public class CustomerService {
     }
 
     public Optional<Customer> updateCustomer(final Customer inputCustomer) {
-        Optional<Customer> customer = customerRepository.findById(inputCustomer.getId());
+        Optional<Customer> customer = customerRepository.findById(inputCustomer.getCustomerId());
         if (customer.isPresent()) {
             customer.get().setName(inputCustomer.getName());
             customer.get().setEmail(inputCustomer.getEmail());
